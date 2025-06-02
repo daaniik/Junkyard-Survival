@@ -4,7 +4,7 @@ using UnityEngine;
 
 using System;
 
-public class Enemy
+public class Enemy : MonoBehaviour 
 {
     public float Health { get; set; } = 100f;
     public float Speed { get; set; } = 5f;
