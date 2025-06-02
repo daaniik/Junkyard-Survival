@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyF : MonoBehaviour
+public class EnemyFirst : MonoBehaviour
 {
     public float speed = 10f;
 

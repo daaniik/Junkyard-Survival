@@ -2,13 +2,40 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BurnTurret : Turret
-{
-    public float BurnDamagePerSecond { get; set; } = 5f;
-    public float BurnDuration { get; set; } = 4f;
 
-    public override void Attack(Enemy enemy)
+public class BurnTurret : BaseTurret
+{
+    public float burnDamage = 2f;
+    public int burnDuration = 3;
+
+    public override void ShootAtEnemies()
     {
-        enemy.ApplyBurn(BurnDamagePerSecond, BurnDuration);
+        Collider[] hits = Physics.OverlapSphere(transform.position, range);
+        foreach (var hit in hits)
+        {
+            Enemy enemy = hit.GetComponent<Enemy>();
+            if (enemy != null)
+            {
+                enemy.TakeDamage(damage);
+                ApplyBurn(enemy);
+            }
+        }
+    }
+
+    void ApplyBurn(Enemy enemy)
+    {
+        StartCoroutine(BurnEffect(enemy));
+    }
+
+    IEnumerator BurnEffect(Enemy enemy)
+    {
+        int timer = 0;
+        while (timer < burnDuration)
+        {
+            if (enemy == null) yield break;
+            enemy.TakeDamage(burnDamage);
+            timer++;
+            yield return new WaitForSeconds(1f);
+        }
     }
 }
