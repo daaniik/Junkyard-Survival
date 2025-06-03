@@ -116,7 +116,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7425428697414175788}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffc29000ac8e7cc42a4b8b6e60b18372, type: 3}
+  m_Script: {fileID: 11500000, guid: cdc01eccabe8c3e48abf3021d06f2006, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
@@ -133,3 +133,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  moveSpeed: 3
+  distanceTraveled: 0

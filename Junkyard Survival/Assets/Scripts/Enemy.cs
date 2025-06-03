@@ -1,36 +1,29 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyF : MonoBehaviour
+
+public class Enemy : MonoBehaviour
 {
-    public float speed = 10f;
+    public float health = 100f;
+    public float moveSpeed = 3f;
+    public float distanceTraveled = 0f; // Tracks how far enemy has moved
 
-    private Transform target;
-    private int wavepointIndex = 0;
-
-    void Start ()
+    void Update()
     {
-        target = Waypoints.points[0];
+        float move = moveSpeed * Time.deltaTime;
+        transform.Translate(Vector3.forward * move);
+        distanceTraveled += move;
     }
 
-    void Update ()
+    public void TakeDamage(float amount)
     {
-        Vector3 dir = target.position - transform.position;
-        transform.Translate(dir.normalized * speed *Time.deltaTime,Space.World);
-
-        if (Vector3.Distance(transform.position, target.position) <= 0.6f)
-        {
-            GetNextWaypoint();
-        }
-    }
-    void GetNextWaypoint()
-    {
-      if (wavepointIndex >= Waypoints.points.Length - 1)
+        health -= amount;
+        if (health <= 0f)
         {
             Destroy(gameObject);
-            return;
-        }  
-        
-        wavepointIndex++;
-        target = Waypoints.points[wavepointIndex];
+        }
     }
 }
+
+

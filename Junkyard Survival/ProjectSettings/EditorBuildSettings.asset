@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
-    path: Assets/Scenes/tijnscene.unity
+    path: Assets/Scenes/MainScene.unity
     guid: 6d52fa2c48f91e549a49f68e504a02b3
   m_configObjects: {}
