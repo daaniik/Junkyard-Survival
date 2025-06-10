@@ -6,6 +6,7 @@ public class EnemyWalkPath : MonoBehaviour
 
     private Transform target;
     private int wavepointIndex = 0;
+    
 
     void Start ()
     {
@@ -16,6 +17,7 @@ public class EnemyWalkPath : MonoBehaviour
     {
         Vector3 dir = target.position - transform.position;
         transform.Translate(dir.normalized * speed *Time.deltaTime,Space.World);
+       
 
         if (Vector3.Distance(transform.position, target.position) <= 0.6f)
         {

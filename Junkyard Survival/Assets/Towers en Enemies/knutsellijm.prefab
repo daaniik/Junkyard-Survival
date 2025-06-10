@@ -150,7 +150,8 @@ MonoBehaviour:
   fireRate: 3
   slowAmount: 1
   slowDuration: 5
-  bulletPrefab: {fileID: 0}
+  bulletPrefab: {fileID: 6549178359312127868, guid: 56c95c2b8e341d54ebecf6b292165dcb,
+    type: 3}
   firePoint: {fileID: 3370385238783376266}
 --- !u!4 &7498926549353811080 stripped
 Transform:

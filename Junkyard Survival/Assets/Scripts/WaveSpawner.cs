@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro; // Add this at the top
+
 
 public class WaveSpawner : MonoBehaviour
 {
@@ -7,7 +9,7 @@ public class WaveSpawner : MonoBehaviour
     public Transform spawnPoint;
     public float timeBetweenWaves = 5f;
     public int enemiesPerWave = 5;
-    public Text waveCounterText;
+    public TMP_Text waveCounterText;
 
     private int waveNumber = 0;
 
