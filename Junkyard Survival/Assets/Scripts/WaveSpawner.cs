@@ -1,49 +1,42 @@
 using UnityEngine;
-using System.Collections;
 using UnityEngine.UI;
-using TMPro;
 
 public class WaveSpawner : MonoBehaviour
 {
-    public Transform enemyPrefab;
-
+    public GameObject[] enemyPrefabs;  // 4 enemy prefabs in Inspector
     public Transform spawnPoint;
-
     public float timeBetweenWaves = 5f;
-    private float countdown = 2f;
+    public int enemiesPerWave = 5;
+    public Text waveCounterText;
 
-    public TextMeshProUGUI WaveCountdown;
+    private int waveNumber = 0;
 
-    private int waveIndex = 0;
-
-    void Update()
+    void Start()
     {
-      if (countdown <= 0f)
+        StartCoroutine(SpawnWaves());
+    }
+
+    System.Collections.IEnumerator SpawnWaves()
+    {
+        while (true)
         {
-            StartCoroutine(SpawnWave());
-            countdown = timeBetweenWaves;
+            waveNumber++;
+            waveCounterText.text = "Wave: " + waveNumber;
 
+            for (int i = 0; i < enemiesPerWave; i++)
+            {
+                SpawnEnemy();
+                yield return new WaitForSeconds(0.5f); // time between spawns
+            }
+
+            enemiesPerWave += 1; // optional: scale difficulty
+            yield return new WaitForSeconds(timeBetweenWaves);
         }
-
-         countdown -= Time.deltaTime;
-
-        WaveCountdown.text = Mathf.Round(countdown).ToString();
     }
 
-    IEnumerator SpawnWave ()
+    void SpawnEnemy()
     {
-        for (int i = 0; i < waveIndex; i++)
-        {
-            spawnEnemy();
-            yield return new WaitForSeconds(0.5f);
-        }
-
-        waveIndex++;
+        int randomIndex = Random.Range(0, enemyPrefabs.Length);
+        Instantiate(enemyPrefabs[randomIndex], spawnPoint.position, Quaternion.identity);
     }
-
-    void spawnEnemy()
-    {
-        Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
-    }
-
 }
