@@ -258,7 +258,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2973888204884842514}
         m_TargetAssemblyTypeName: Pausemenu, Assembly-CSharp
-        m_MethodName: ResumeGame
+        m_MethodName: Resume
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -416,7 +416,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 1299157801509667191}
-  isPaused: 0
 --- !u!1 &3205428129312159186
 GameObject:
   m_ObjectHideFlags: 0
@@ -675,7 +674,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2973888204884842514}
         m_TargetAssemblyTypeName: Pausemenu, Assembly-CSharp
-        m_MethodName: GoToMainMenu
+        m_MethodName: LoadMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -778,7 +777,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 0}
-  isPaused: 0
 --- !u!1 &7578486737403436769
 GameObject:
   m_ObjectHideFlags: 0
