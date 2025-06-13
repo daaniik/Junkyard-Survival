@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Pausemenu : MonoBehaviour
 {
-    public GameObject pauseMenu; // <-- moet gekoppeld zijn in de Inspector
+    public GameObject pauseMenu; 
 
     void Update()
     {
