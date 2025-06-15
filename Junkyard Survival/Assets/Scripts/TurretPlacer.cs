@@ -23,12 +23,12 @@ public class TurretPlacer : MonoBehaviour
 
     public void SelectBurnTurret()
     {
-        SelectTurret(burnTurretPrefab, 75);
+        SelectTurret(burnTurretPrefab, 200);
     }
 
     public void SelectBubbleTurret()
     {
-        SelectTurret(bubbleTurretPrefab, 100);
+        SelectTurret(bubbleTurretPrefab, 150);
     }
 
     public void directDamageTurret()
