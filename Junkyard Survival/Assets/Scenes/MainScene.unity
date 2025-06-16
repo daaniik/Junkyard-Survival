@@ -5208,7 +5208,7 @@ GameObject:
   - component: {fileID: 692172692}
   - component: {fileID: 692172691}
   m_Layer: 0
-  m_Name: Plane (1)
+  m_Name: Ondergrond map
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15795,7 +15795,7 @@ PrefabInstance:
     - target: {fileID: 4604422009922887207, guid: dde28525247d52f429b75c4e191ab916,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.27
+      value: -6.16
       objectReference: {fileID: 0}
     - target: {fileID: 4604422009922887207, guid: dde28525247d52f429b75c4e191ab916,
         type: 3}
