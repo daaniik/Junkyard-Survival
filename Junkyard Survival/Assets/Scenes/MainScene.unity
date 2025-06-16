@@ -10327,7 +10327,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0875b5187fa22ce48abd40eaae20dcd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coins: 100
+  coins: 1000
   coinText: {fileID: 2082408197}
 --- !u!4 &1427344805
 Transform:
@@ -10379,7 +10379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 996949afc01a7894aa6216eebbe80904, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseHealth: 100
+  baseHealth: 1000
 --- !u!136 &1427344808
 CapsuleCollider:
   m_ObjectHideFlags: 0
