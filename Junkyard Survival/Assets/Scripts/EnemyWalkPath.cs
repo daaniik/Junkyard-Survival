@@ -5,34 +5,41 @@ public class EnemyWalkPath : MonoBehaviour
     public float speed = 10f;
 
     private Transform target;
-    private int wavepointIndex = 0;
-    
+    private int waypointIndex = 0;
 
-    void Start ()
+    void Start()
     {
         target = Waypoints.points[0];
     }
 
-    void Update ()
+    void Update()
     {
         Vector3 dir = target.position - transform.position;
-        transform.Translate(dir.normalized * speed *Time.deltaTime,Space.World);
-       
+        transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
 
+        // Face the direction of movement
+        if (dir != Vector3.zero)
+        {
+            Quaternion lookRotation = Quaternion.LookRotation(dir);
+            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f); // smooth turn
+        }
+
+        // Check if close to waypoint
         if (Vector3.Distance(transform.position, target.position) <= 0.6f)
         {
             GetNextWaypoint();
         }
     }
+
     void GetNextWaypoint()
     {
-      if (wavepointIndex >= Waypoints.points.Length - 1)
+        if (waypointIndex >= Waypoints.points.Length - 1)
         {
             Destroy(gameObject);
             return;
-        }  
-        
-        wavepointIndex++;
-        target = Waypoints.points[wavepointIndex];
+        }
+
+        waypointIndex++;
+        target = Waypoints.points[waypointIndex];
     }
 }
