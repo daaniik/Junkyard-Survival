@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+[RequireComponent(typeof(Animator))]
 public class Enemy : MonoBehaviour
 {
     public float health = 100f;
@@ -28,6 +29,8 @@ public class Enemy : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        if (isDying) return;
+
         if (other.CompareTag("Base"))
         {
             if (Lose.instance != null)
@@ -35,7 +38,7 @@ public class Enemy : MonoBehaviour
                 Lose.instance.TakeDamage(damageToBase);
             }
 
-            Destroy(gameObject);
+            StartCoroutine(DieAndDestroy());
         }
     }
 
@@ -46,10 +49,30 @@ public class Enemy : MonoBehaviour
         health -= amount;
         if (health <= 0f)
         {
-            isDying = true;
             CoinManager.instance.AddCoins(coinValue);
-            animator.SetTrigger("Dood"); // Make sure you have a "Die" trigger in Animator
-            Destroy(gameObject, 1f); // Delay so animation can play
+            StartCoroutine(DieAndDestroy());
         }
+    }
+
+    private System.Collections.IEnumerator DieAndDestroy()
+    {
+        isDying = true;
+
+        // Stop movement
+        Rigidbody rb = GetComponent<Rigidbody>();
+        if (rb != null)
+        {
+            rb.velocity = Vector3.zero;
+            rb.isKinematic = true;
+        }
+
+        // Play death animation
+        if (animator != null)
+        {
+            animator.SetTrigger("Die");
+            yield return new WaitForSeconds(1.5f); // Wait for animation to finish
+        }
+
+        Destroy(gameObject);
     }
 }

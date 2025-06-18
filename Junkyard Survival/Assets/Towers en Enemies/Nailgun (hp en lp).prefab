@@ -86,7 +86,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebb45ae584ce10a4fa08ed06b004eed0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 5
+  range: 10.47
   damage: 10
   fireRate: 3
   bulletPrefab: {fileID: 2300500790215981883, guid: 7331130014d22fc4191d50649fec550c,
