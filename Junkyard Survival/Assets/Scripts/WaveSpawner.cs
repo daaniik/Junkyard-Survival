@@ -1,11 +1,11 @@
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro; // Add this at the top
-
+using TMPro;
+using UnityEngine.SceneManagement; 
 
 public class WaveSpawner : MonoBehaviour
 {
-    public GameObject[] enemyPrefabs;  // 4 enemy prefabs in Inspector
+    public GameObject[] enemyPrefabs;
     public Transform spawnPoint;
     public float timeBetweenWaves = 5f;
     public int enemiesPerWave = 5;
@@ -20,7 +20,7 @@ public class WaveSpawner : MonoBehaviour
 
     System.Collections.IEnumerator SpawnWaves()
     {
-        while (true)
+        while (waveNumber < 20)
         {
             waveNumber++;
             waveCounterText.text = "Wave: " + waveNumber;
@@ -28,12 +28,15 @@ public class WaveSpawner : MonoBehaviour
             for (int i = 0; i < enemiesPerWave; i++)
             {
                 SpawnEnemy();
-                yield return new WaitForSeconds(0.5f); // time between spawns
+                yield return new WaitForSeconds(0.5f);
             }
 
-            enemiesPerWave += 1; // optional: scale difficulty
+            enemiesPerWave += 1;
             yield return new WaitForSeconds(timeBetweenWaves);
         }
+
+        // When wave 20 ends, load Win Scene
+        SceneManager.LoadScene("Youwinmenu"); 
     }
 
     void SpawnEnemy()
