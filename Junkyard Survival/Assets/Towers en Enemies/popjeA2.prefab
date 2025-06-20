@@ -155,7 +155,7 @@ MonoBehaviour:
   moveSpeed: 3
   distanceTraveled: 0
   coinValue: 10
-  damageToBase: 10
+  damageToBase: 40
 --- !u!114 &3774451616484528536
 MonoBehaviour:
   m_ObjectHideFlags: 0
