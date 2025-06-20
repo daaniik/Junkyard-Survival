@@ -47,7 +47,8 @@ public class SlowTurret : BaseTurret
     }
     // een coroutine geeft tijdelijke effect
     // tweede stukje slaat die de originele snelheid op van de enemy zodat die em weer terug kan zetten
-    //Vertraag de vijand.Bijvoorbeeld: moveSpeed = 3 slowAmount = 0.5  nieuwe snelheid = 1.5
-
+    // Vertraag de vijand.Bijvoorbeeld: moveSpeed = 3 slowAmount = 0.5  nieuwe snelheid = 1.5
+    // midden laat het even wachten dus dit is de duur van de slowness
+    //laatste is als de enemy dr nog is dan zet die de origenele speed terug
 
 }
