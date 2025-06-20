@@ -56,10 +56,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 8
-  damage: 5
+  damage: 40
   fireRate: 4
-  burnDamage: 20
-  burnDuration: 8
+  burnDamage: 40
+  burnDuration: 6
   flameEffect: {fileID: 4485671663302856554}
 --- !u!23 &1466369980306708761
 MeshRenderer:
