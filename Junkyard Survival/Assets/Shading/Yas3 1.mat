@@ -7,10 +7,10 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Yas3
-  m_Shader: {fileID: -6465566751694194690, guid: 95ffee7891cc0924c80439154e5f85f8,
+  m_Name: Yas3 1
+  m_Shader: {fileID: -6465566751694194690, guid: d9e208c2660a8a94b871f8bb9d64c9ad,
     type: 3}
-  m_Parent: {fileID: -876546973899608171, guid: 95ffee7891cc0924c80439154e5f85f8,
+  m_Parent: {fileID: -876546973899608171, guid: d9e208c2660a8a94b871f8bb9d64c9ad,
     type: 3}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -31,8 +31,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _OutlineSize: 1.206
+    - _OutlineSize: 1.049
     - _QueueControl: 0
+    - _Vertical_Offset: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

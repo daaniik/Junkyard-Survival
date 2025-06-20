@@ -4756,7 +4756,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &208794986
 Transform:
   m_ObjectHideFlags: 0
@@ -6139,7 +6139,7 @@ ParticleSystem:
         ctime7: 0
         atime0: 0
         atime1: 32922
-        atime2: 64841
+        atime2: 65535
         atime3: 65535
         atime4: 0
         atime5: 0
@@ -6148,7 +6148,7 @@ ParticleSystem:
         m_Mode: 0
         m_ColorSpace: 0
         m_NumColorKeys: 3
-        m_NumAlphaKeys: 4
+        m_NumAlphaKeys: 3
       minGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -37767,7 +37767,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 996949afc01a7894aa6216eebbe80904, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseHealth: 1000
+  baseHealth: 10
 --- !u!136 &1427344808
 CapsuleCollider:
   m_ObjectHideFlags: 0

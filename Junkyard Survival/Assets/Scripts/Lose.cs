@@ -24,4 +24,16 @@ public class Lose : MonoBehaviour
             SceneManager.LoadScene("Youlosemenu"); 
         }
     }
+
+    // Herstart de huidige scene
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    // Laad het hoofdmenu (pas de naam aan indien nodig)
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
 }
