@@ -15,7 +15,6 @@ public class TurretPlacer : MonoBehaviour
         selectedCost = cost;
     }
 
-    //  These are wrapper methods you can call from UI
     public void SelectSlowTurret()
     {
         SelectTurret(slowTurretPrefab, 50);
@@ -35,7 +34,7 @@ public class TurretPlacer : MonoBehaviour
     {
         SelectTurret(directDamagePrefab, 100);
     }
-    // Assign these in Inspector
+   
     public GameObject slowTurretPrefab;
     public GameObject burnTurretPrefab;
     public GameObject bubbleTurretPrefab;
