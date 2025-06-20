@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 6
-  damage: 40
+  damage: 30
   fireRate: 3
   slowAmount: 1
   slowDuration: 5

@@ -56,7 +56,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 8
-  damage: 5
+  damage: 60
   fireRate: 4
   burnDamage: 20
   burnDuration: 8

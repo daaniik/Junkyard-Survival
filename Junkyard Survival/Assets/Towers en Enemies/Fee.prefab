@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 765e092db58c8884cbf747d16e4290c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 450
   moveSpeed: 3
   distanceTraveled: 0
   coinValue: 10
